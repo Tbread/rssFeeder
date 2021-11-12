@@ -24,6 +24,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RssReadService {
 
+
+
     public String readRssPage(String rssLink) throws IOException {
         URL url = new URL(rssLink);
         HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
@@ -39,7 +41,7 @@ public class RssReadService {
         return content.toString();
     }
 
-    public List<RssResponseDto> readAndParse(String rssLink) throws IOException, ParserConfigurationException, SAXException {
+    public List<RssResponseDto> readAndParse(String rssLink,String) throws IOException, ParserConfigurationException, SAXException {
         List<RssResponseDto> rssResponseDtoList = new ArrayList<>();
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
